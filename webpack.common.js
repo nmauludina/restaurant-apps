@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -19,6 +20,12 @@ module.exports = {
           {
             loader: 'css-loader',
           },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          'file-loader',
         ],
       },
     ],
