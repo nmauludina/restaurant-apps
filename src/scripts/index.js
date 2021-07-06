@@ -14,6 +14,7 @@ const hamburgerButtonElement = document.querySelector("#hamburger");
 const drawerElement = document.querySelector("#drawer");
 const mainElement = document.querySelector("main");
 const heroElement = document.querySelector("#hero");
+const footerElement = document.querySelector("footer");
  
 hamburgerButtonElement.addEventListener("click", event => {
  drawerElement.classList.toggle("open");
@@ -27,6 +28,11 @@ mainElement.addEventListener("click", event => {
 });
 
 heroElement.addEventListener("click",event => {
+    drawerElement.classList.remove("open");
+    event.stopPropagation();
+});
+
+footerElement.addEventListener("click",event => {
     drawerElement.classList.remove("open");
     event.stopPropagation();
 });
@@ -61,7 +67,13 @@ for (let i = 0; i < restaurants.length; i++) {
 
 posts.innerHTML = content;
 
+/*
+*
+*   footer
+*
+*/
+
 var date = new Date();
 var year = date.getFullYear();
-const footer = document.querySelector("footer");
-footer.innerHTML = `<p tabindex="0">Copyright &copy; ${year} - Kenyangin</p>`
+
+footerElement.innerHTML = `<p tabindex="0">Copyright &copy; ${year} - Kenyangin</p>`
