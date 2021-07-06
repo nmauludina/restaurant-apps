@@ -57,11 +57,23 @@ body {
     display: inline-block;
 }
 
-.header__menu {
+#hamburger.header__menu {
     font-size: 44px;
-    margin: 10px;
+    padding: 10px;
     display: flex;
-    width: 30px;
+    width: fit-content;
+    text-decoration: none;
+}
+
+#hamburger.header__menu:visited {
+    color: #F0E3CA;
+}
+
+#drawer.open {
+    left: 5%;
+    width: 90%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 
 
@@ -264,6 +276,7 @@ body {
 .post-item__title a {
     text-decoration: none;
     color: inherit;
+    padding: 13px 0;
 }
 
 .post-item__description {

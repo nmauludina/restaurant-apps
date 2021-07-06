@@ -6,15 +6,28 @@ import { restaurants } from '../DATA.json';
 
 /*
 *
-*   app bar
+*   open / close navigation
 *
 */
 
-const menu = document.querySelector('#menu');
-const drawer = document.querySelector('#drawer');
+const hamburgerButtonElement = document.querySelector("#hamburger");
+const drawerElement = document.querySelector("#drawer");
+const mainElement = document.querySelector("main");
+const heroElement = document.querySelector("#hero");
+ 
+hamburgerButtonElement.addEventListener("click", event => {
+ drawerElement.classList.toggle("open");
+ event.stopPropagation();
+});
+ 
+ 
+mainElement.addEventListener("click", event => {
+ drawerElement.classList.remove("open");
+ event.stopPropagation();
+});
 
-menu.addEventListener('click', function (event) {
-    drawer.classList.toggle('open');
+heroElement.addEventListener("click",event => {
+    drawerElement.classList.remove("open");
     event.stopPropagation();
 });
 
@@ -51,4 +64,4 @@ posts.innerHTML = content;
 var date = new Date();
 var year = date.getFullYear();
 const footer = document.querySelector("footer");
-footer.innerHTML = `<p tabindex="1">Copyright &copy; ${year} - Kenyang.in</p>`
+footer.innerHTML = `<p tabindex="0">Copyright &copy; ${year} - Kenyangin</p>`
