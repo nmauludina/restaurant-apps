@@ -9,6 +9,7 @@ const app = new App({
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('main'),
   footer: document.querySelector('footer'),
+  toContent: document.querySelector('#linktocontent'),
 });
 
 window.addEventListener('hashchange', () => {
@@ -19,10 +20,6 @@ window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
-
-const os = require('os');
-
-console.log(os.networkInterfaces().address);
 
 const date = new Date();
 app._footer.innerHTML = `<p tabindex="0">Copyright &copy; ${date.getFullYear()} - Kenyangin</p>`;

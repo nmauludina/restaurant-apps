@@ -17,9 +17,7 @@
             "files":["*.js"],
             "rules": {
                 "no-underscore-dangle": "off",
-                "no-console": "off",
-                "import/no-extraneous-dependencies": "off",
-                "no-restricted-globals": "off"
+                "import/no-extraneous-dependencies": "off"
             }
         }
     ]

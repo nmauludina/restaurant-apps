@@ -1,8 +1,10 @@
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import UrlParser from '../../routes/url-parser';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 import {
   createRestaurantDetailTemplate,
-  createLikeRestaurantButtonTemplate,
+  customerReviewsTemplate,
+  drinksTemplate, foodsTemplate,
 } from '../templates/template-creator';
 
 const Detail = {
@@ -14,29 +16,28 @@ const Detail = {
   },
 
   async afterRender() {
+    const drawerBorder = document.querySelector('#drawer');
+    drawerBorder.style = 'border: 5px solid #FF8303';
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantDbSource.detailRestaurant(url.id);
     const movieContainer = document.querySelector('#movie');
-    const foodsTemplate = restaurant.menus.foods.map((food) => `
-      <div>${food.name}</div>
-    `);
-    const drinksTemplate = restaurant.menus.drinks.map((drink) => `
-      <div>${drink.name}</div>
-    `);
-    const customerReviewsTemplate = restaurant.customerReviews.map((customerReview) => `
-      <div class="movie__review">
-        <h4>${customerReview.name} - ${customerReview.date}</h4>
-        <p>${customerReview.review}</p>
-      </div>
-    `);
     movieContainer.innerHTML = createRestaurantDetailTemplate(
       restaurant,
-      foodsTemplate,
-      drinksTemplate,
-      customerReviewsTemplate,
+      foodsTemplate(restaurant.menus.foods),
+      drinksTemplate(restaurant.menus.foods),
+      customerReviewsTemplate(restaurant.customerReviews),
     );
-    const likeButtonContainer = document.querySelector('#likeButtonContainer');
-    likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        city: restaurant.city,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+      },
+    });
   },
 };
 

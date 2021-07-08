@@ -13,7 +13,7 @@
     width: 58%;
     background: #F0E3CA;
     border-radius: 10px;
-    top: -120px;
+    top: -106px;
     -webkit-transform: translate(-320px, 0);
     transform: translate(-320px, 0);
     transition: transform 0.3s ease;
@@ -32,6 +32,18 @@
     color: #FF8303;
     padding: 20px;
     font-size: 20px;
+  }
+
+  .movie {
+    padding: 24px 21px 22px;
+  }
+
+  .movie__info .menu__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu__container .menu__title {
+    grid-column: 1 / 3;
   }
 }
 

@@ -32,6 +32,7 @@ body {
 
 .header {
     min-height: 56px;
+    min-width: 280px;
     transition: min-height 0.3s;
     display: flex;
     justify-content: space-between;
@@ -63,6 +64,9 @@ body {
     display: flex;
     width: fit-content;
     text-decoration: none;
+    background: #FF8303;
+    border: none;
+    color: #F0E3CA;
 }
 
 #hamburger.header__menu:visited {
@@ -128,9 +132,9 @@ body {
 
 .explore__label::after {
     content: '';
-    margin-top: 16px;
+    margin: 7px 0 12px;
     display: block;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 2px solid #eeeeee;
 }
 
 
@@ -195,9 +199,18 @@ body {
  */
 
  .content {
+    margin: 10px 10px 20px;
     padding: 32px;
     background-color: #F0E3CA;
     border-radius: 10px 10px 0 0;
+}
+
+/*
+ * maincontent
+ */
+
+ #maincontent {
+    min-height: 90vh;
 }
 
 /*
@@ -329,16 +342,14 @@ footer p {
 
 .movie {
     margin: 10px auto 20px;
-    padding: 58px 50px 52px;
+    padding: 58px 90px 52px;
     width: 100%;
     max-width: 1000px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px 16px;
     color: #1B1A17;
     background-color: #F0E3CA;
     border-radius: 20px;
     font-weight: lighter;
+    min-height: 90vh;
 }
 
 .movie .movie__image {
@@ -385,7 +396,7 @@ footer p {
 
 .movie__info .menu__container {
     display: grid;
-    grid-template-columns: 160px 160px 160px;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 6px;
     margin: 4px 0;
 }
@@ -413,12 +424,12 @@ footer p {
 */
 
 .like {
-    font-size: 18px;
+    font-size: 21px;
     position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background-color: #db0000;
-    color: white;
+    bottom: 70px;
+    right: 42px;
+    background-color: #FF8303;
+    color: #F0E3CA;
     border: 0;
     border-radius: 50%;
     width: 55px;
@@ -427,4 +438,6 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+    border: 3px solid #F0E3CA;
 }

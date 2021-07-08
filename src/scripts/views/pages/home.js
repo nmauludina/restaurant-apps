@@ -22,7 +22,6 @@ const Home = {
   async afterRender() {
     const restaurants = await RestaurantDbSource.restaurantsList();
     const restaurantContainer = document.querySelector('#posts');
-    console.log(restaurants);
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
