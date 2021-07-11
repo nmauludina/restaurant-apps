@@ -366,6 +366,7 @@ footer p {
 
 .movie .movie__info, .movie__overview {
     padding: 9px;
+    word-wrap: break-word;
 }
 
 

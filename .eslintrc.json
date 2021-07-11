@@ -10,14 +10,17 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "rules": {
-    },
+    "rules": {},
     "overrides": [
         {
-            "files":["*.js"],
+            "files": [
+                "*.js"
+            ],
             "rules": {
                 "no-underscore-dangle": "off",
-                "import/no-extraneous-dependencies": "off"
+                "import/no-extraneous-dependencies": "off",
+                "no-restricted-globals": "off",
+                "no-console": "off"
             }
         }
     ]

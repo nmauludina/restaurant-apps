@@ -48,11 +48,11 @@ const createRestaurantDetailTemplate = (restaurant, foodsTemplate, drinksTemplat
 `;
 
 const foodsTemplate = (foods) => foods.map((food) => `
-  <div tabindex="0">${food.name}</div>
+  <div tabindex="0" class="menu-item">${food.name}</div>
 `).join('');
 
 const drinksTemplate = (drinks) => drinks.map((drink) => `
-  <div tabindex="0">${drink.name}</div>
+  <div tabindex="0" class="menu-item">${drink.name}</div>
 `).join('');
 
 const customerReviewsTemplate = (customerReviews) => customerReviews.map((customerReview) => `
